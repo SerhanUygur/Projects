@@ -7,7 +7,7 @@ const resetBtn = document.querySelector(".ResetBtn")
 
 let startTime = 0;
 let elapsedTime = 0;
-let currentTime = 0; 
+// let currentTime = 0; 
 let paused = true;
 let IntervalId;
 let hrs = 0;
