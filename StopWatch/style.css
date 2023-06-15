@@ -34,3 +34,13 @@ button{
         color: brown;
     }
 }
+
+
+ol{
+    width: 70px;
+    margin: auto;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
