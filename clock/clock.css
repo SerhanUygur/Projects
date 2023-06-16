@@ -1,0 +1,15 @@
+body{
+    
+    font-size: 40px;
+    background-color: rgb(47, 47, 125);
+    
+}
+.time{
+    width: 38%;
+    margin: auto;
+    height: 90px;
+    margin-top: 200px;
+    color:whitesmoke;
+    text-shadow: 0 0 20px #afadad, 0 0 100px #FFF, 0 0 15px #c1bebe, 0 0 20px #4aad2e, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #1878ff, 0 0 75px #49ff18;
+    font-family: 'Roboto Mono', monospace;
+}
