@@ -39,7 +39,7 @@ function timeCount(){
     secs = pad(secs)
     mins = pad(mins)
     hrs = pad(hrs)
-    // milisec=pad(milisec)
+   
 
     TimeDisplay.innerHTML=`${hrs}:${mins}:${secs},${milisec}`
 }
@@ -72,11 +72,13 @@ ResetBTN.addEventListener("click",()=>{
 LapBTN.addEventListener("click",()=>{
     if(!pause){
         let listItem = document.createElement("li")
-        listItem.innerHTML = TimeDisplay.innerHTML
-        Laps.append(listItem)
+        listItem.innerHTML = TimeDisplay.innerHTML    
+        Laps.append(listItem)   
     }
 })
+
 resetLaps.addEventListener("click",()=>{
     Laps.innerHTML=""
 })
+
 
