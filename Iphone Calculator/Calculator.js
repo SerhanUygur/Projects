@@ -1,91 +1,68 @@
-let AC = document.querySelector("#AC")
-let one = document.querySelector("#one")
-let two = document.querySelector("#two")
-let three = document.querySelector("#three")
-let four = document.querySelector("#four")
-let five = document.querySelector("#five")
-let six = document.querySelector("#six")
-let seven = document.querySelector("#seven")
-let eight = document.querySelector("#eight")
-let nine = document.querySelector("#nine")
-let zero = document.querySelector("#zero")
+var btnOpt = document.querySelectorAll(".btn-orange")
+var screens = document.querySelector(".create")
+var numbers = document.querySelectorAll(".numbers")
+var clear = document.querySelector(".clear")
+var procent =document.querySelector(".procent")
+var plusMinus = document.querySelector(".plusMinus")
 
-let write = document.querySelector(".input")
+var optState = false;
+var opt = '';
+var final = 0;
 
-AC.addEventListener("click",()=>{
-    write.innerHTML="0"
-})
-one.addEventListener("click",()=>{
-    if(write.innerHTML=="0"){
-    write.innerHTML =""
-    write.innerHTML += 1}else{
-        write.innerHTML += 1 
+numbers.forEach(number => {
+    number.addEventListener("click",showNumber);
+    
+    function showNumber(){
+        
+    if(screens.textContent === "0" || optState){
+        screens.textContent="";
     }
-})
-two.addEventListener("click",()=>{
-    if(write.innerHTML=="0"){
-        write.innerHTML =""
-        write.innerHTML += 2}else{
-            write.innerHTML += 2 
-        }
-})
-three.addEventListener("click",()=>{
-    if(write.innerHTML=="0"){
-        write.innerHTML =""
-        write.innerHTML += 3}else{
-            write.innerHTML += 3 
-        }
-})
-four.addEventListener("click",()=>{
-    if(write.innerHTML=="0"){
-        write.innerHTML =""
-        write.innerHTML += 4}else{
-            write.innerHTML += 4 
-        }
-})
-five.addEventListener("click",()=>{
-    if(write.innerHTML=="0"){
-        write.innerHTML =""
-        write.innerHTML += 5}else{
-            write.innerHTML += 5 
-        }
-})
-six.addEventListener("click",()=>{
-    if(write.innerHTML=="0"){
-        write.innerHTML =""
-        write.innerHTML += 6}else{
-            write.innerHTML += 6 
-        }
-})
-seven.addEventListener("click",()=>{
-    if(write.innerHTML=="0"){
-        write.innerHTML =""
-        write.innerHTML += 7}else{
-            write.innerHTML += 7 
-        }
-})
-eight.addEventListener("click",()=>{
-    if(write.innerHTML=="0"){
-        write.innerHTML =""
-        write.innerHTML += 8}else{
-            write.innerHTML += 8 
-        }
-})
-nine.addEventListener("click",()=>{
-    if(write.innerHTML=="0"){
-        write.innerHTML =""
-        write.innerHTML += 9}else{
-            write.innerHTML += 9 
-        }
-    console.log(typeof(write.innerHTML))
-})
-zero.addEventListener("click",()=>{
-    if(!write.innerHTML){
-    write.innerHTML = ""
-    }else if(write.innerHTML !== "0"){
-        write.innerHTML +=0
+        screens.textContent += this.textContent;
+        optState=false;
     }
+
 })  
 
+btnOpt.forEach(operator => {
+    operator.addEventListener("click",calculator);
+
+    function calculator(){
+        optState = true ;
+        var newOpt = this.textContent;
+
+        switch(opt){
+            case "+":
+                screens.textContent = final+Number(screens.textContent);
+                break;
+            case "-":
+                screens.textContent = final-Number(screens.textContent);
+                break;
+            case "X":
+                screens.textContent = final*Number(screens.textContent);
+                break;
+            case "/":
+                screens.textContent = final/Number(screens.textContent);
+                break;
+        }
+
+        final = Number(screens.textContent);
+        opt = newOpt;
+    }
+})
+
+clear.addEventListener("click",()=>{
+    screens.textContent = "0"
+})
 
 
+procent.addEventListener("click",()=>{
+    screens.textContent = screens.textContent/100;
+})
+
+plusMinus.addEventListener("click",()=>{
+    if(Math.sign(screens.textContent)== "-1"){
+        screens.textContent = Math.abs(screens.textContent);
+    }else {
+        screens.textContent = -screens.textContent
+    }
+})
