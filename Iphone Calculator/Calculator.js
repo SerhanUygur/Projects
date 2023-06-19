@@ -1,68 +1,100 @@
-var btnOpt = document.querySelectorAll(".btn-orange")
-var screens = document.querySelector(".create")
-var numbers = document.querySelectorAll(".numbers")
-var clear = document.querySelector(".clear")
-var procent =document.querySelector(".procent")
-var plusMinus = document.querySelector(".plusMinus")
+let btnOpt = document.querySelectorAll(".btn-orange")
+let screens = document.querySelector(".create")
+let numbers = document.querySelectorAll(".numbers")
+let clear = document.querySelector(".clear")
+let plusMinus = document.querySelector(".plusMinus")
+let persent = document.querySelector(".procent")
+let comma = document.querySelector(".comma")
 
-var optState = false;
-var opt = '';
-var final = 0;
+let final = 0;
+let operation = false;
+let opt ="";
+console.log(screens.innerHTML)
+
 
 numbers.forEach(number => {
-    number.addEventListener("click",showNumber);
-    
+    if(screens.textContent[screens.textContent.length-1] !=="."){}
+    number.addEventListener("click",showNumber)
+
+ 
     function showNumber(){
-        
-    if(screens.textContent === "0" || optState){
-        screens.textContent="";
-    }
-        screens.textContent += this.textContent;
-        optState=false;
-    }
-
-})  
-
-btnOpt.forEach(operator => {
-    operator.addEventListener("click",calculator);
-
-    function calculator(){
-        optState = true ;
-        var newOpt = this.textContent;
-
-        switch(opt){
-            case "+":
-                screens.textContent = final+Number(screens.textContent);
-                break;
-            case "-":
-                screens.textContent = final-Number(screens.textContent);
-                break;
-            case "X":
-                screens.textContent = final*Number(screens.textContent);
-                break;
-            case "/":
-                screens.textContent = final/Number(screens.textContent);
-                break;
+        if(screens.innerHTML==="0" || operation){
+            screens.innerHTML=""
+            if(this.textContent ==="."){
+                screens.innerHTML="0"
+                
+            }
         }
 
-        final = Number(screens.textContent);
+        
+
+        screens.textContent += this.textContent 
+        operation=false;  
+        
+
+        function hasDuplicateValue(arr,value){
+            let count =0;
+            for(let i = 0;i<arr.length;i++){
+                if(arr[i]===value){
+                    count ++
+                    if(count==2){
+                        return true
+                    }
+                }
+            }
+            return false;
+        }
+
+        if(hasDuplicateValue(screens.textContent.split(""),".")){
+            
+            screens.textContent=screens.textContent.slice(0,screens.textContent.length-1)
+        }
+    }
+})
+
+
+
+btnOpt.forEach(element =>{
+    element.addEventListener("click",calc)
+    
+    function calc( ){
+        operation=true;
+        let newOpt = this.textContent
+        switch(opt){
+            case "+":
+                screens.textContent = final + Number(screens.textContent)
+            break;
+            case "-":
+                screens.textContent = final - Number(screens.textContent)
+            break;
+            case "*":
+                screens.textContent = final * Number(screens.textContent)
+            break;
+            case "/":
+                screens.textContent = final / Number(screens.textContent)
+            break;
+        }
+        final = Number(screens.innerHTML);
         opt = newOpt;
     }
 })
 
+
 clear.addEventListener("click",()=>{
-    screens.textContent = "0"
-})
-
-
-procent.addEventListener("click",()=>{
-    screens.textContent = screens.textContent/100;
+    screens.innerHTML="0"
+    operation=false;
 })
 
 plusMinus.addEventListener("click",()=>{
-    if(Math.sign(screens.textContent)== "-1"){
-        screens.textContent = Math.abs(screens.textContent);
-    }else {
-        screens.textContent = -screens.textContent
+    if(Math.sign(screens.innerHTML == "-1")){
+        screens.innerHTML = Math.abs(screens.innerHTML)
+    }else{
+        screens.innerHTML = -screens.innerHTML
     }
 })
+
+persent.addEventListener("click",()=>{
+    screens.innerHTML = screens.innerHTML/100
+})
+
+
