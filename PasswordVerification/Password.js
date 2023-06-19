@@ -27,7 +27,7 @@ function myFunction(){
     con1.style.color="green"
     }
     // Second Criteria
-    if(INPUTarray.some((x)=>Number(x))){
+    if(INPUTarray.some((x)=>Number(x))||INPUTarray.some((x)=>x=="0")){
         con2.style.color="Green"
     }else{
         con2.style.color="Red"
