@@ -34,7 +34,8 @@ function myFunction(){
     }
     let Symbol = ["?","/","%",">","<","#","+","-",":","^","&","(",")","[","]","_","|","½","@","!","=",";","$","{","}"]  
     // Third Criteria
-    if(INPUTarray.some((x)=>x===x.toLowerCase())&& INPUTarray.some((x)=>Symbol.includes(x) == false)){
+    let filteredArray = INPUTarray.filter(x => /^[a-zA-Z]+$/.test(x))
+    if(filteredArray.some((x)=>x===x.toLowerCase())){
         con3.style.color ="Green"
     }else{
         con3.style.color = "red"
@@ -43,13 +44,13 @@ function myFunction(){
      if(INPUTarray.some((x)=>Symbol.includes(x))){
             con4.style.color ="Green"
      }else{
-         con4.style.color = "Red"
+            con4.style.color = "Red"
      }
     
     //fifth Criteria
-    if(INPUTarray.some((x)=>x===x.toUpperCase()) && INPUTarray.some((x)=>Symbol.includes(x) == false) ){
+    if(filteredArray.some((x)=>x===x.toUpperCase())){
         con5.style.color ="Green"
-    }else {
+    }else{
         con5.style.color = "red"
     }
     //After delete default everything
@@ -62,3 +63,11 @@ function myFunction(){
     }
     }
     
+// let me = ["s","a","1","A"]
+
+
+// let filtered =me.filter((x)=>x >= 0)
+
+// let final = me-filtered
+// console.log(filtered)
+// console.log(final)
