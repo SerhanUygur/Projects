@@ -24,7 +24,7 @@ function myFunction(){
         input.value=INPUTarray.join("")
     }
     // First Criteria
-    if(INPUTV.length <=8 && INPUTV.length >= 1){
+    if(INPUTV.length <=8 && INPUTV.length >= 1 || !INPUTV){
     con1.style.color="red"
     con1.classList.remove("listclass")
     }else if(INPUTV.length >8){
