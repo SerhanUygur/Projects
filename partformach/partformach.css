@@ -9,13 +9,15 @@
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
+    /* max-width: 1450; */
 }
 nav{
-    background: #000508;
+    background: #000508bd ;
     height: 80px;
     width: 100%;
     border-bottom: black;
     position: fixed;
+    z-index: 1;
 }
 
 label.logo{
@@ -25,20 +27,45 @@ label.logo{
     padding: 0 100px;
     font-weight: bold;
     font-family: 'Ysabeau SC', sans-serif;
+    cursor: pointer;
+}
+label.logo i{
+    position: absolute;
+    top:40px;
+    
+}
+ul.logo2{
+    width: 180px;
+    display: inline-block;
+    margin-top: 5px;
+    padding-top: 7px;
+    margin-left: 65px;
 }
 
-nav ul{
+label.logo .logo2 li{
+    width:200px;
+    line-height: 30px;
+    
+}
+
+label.logo .logo2 li.second{
+    width:200px;
+    line-height: 30px;
+    font-size: 20px;
+}
+
+nav ul.direction{
     float:right;
     margin-right: 20px;
 }
 
-nav ul li{
+nav ul.direction li{
     display:inline-block;
     line-height: 80px;
     margin: 0 5px;
 }
 
-nav ul li a{
+nav ul.direction li a{
     color:white;
     font-size: 17px;
     text-transform: uppercase;
@@ -49,6 +76,16 @@ nav ul li a{
 a.active,a:hover{
     background: #ff891b;
     transition: .5s;
+}
+nav ul.flags{
+    float: right;
+}
+nav ul.flags li{
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    top:0;
+    left: 620px;
 }
 
 .checkbtn{
@@ -65,12 +102,14 @@ a.active,a:hover{
     display: none;
 }
 
+
+
 @media (max-width: 952px){
     label.logo{
         font-size: 30px;
         padding-left: 50px;
     }
-    nav ul li a{
+    nav ul.direction li a{
         font-size:16px
     }
 }
@@ -79,7 +118,7 @@ a.active,a:hover{
     .checkbtn{
         display: block;
     }
-    ul{
+    ul.direction{
         position: fixed;
         width: 100%;
         height: 100vh;
@@ -89,25 +128,106 @@ a.active,a:hover{
         text-align: center;
         transition: all .5s;
     }
-    nav ul li {
+    nav ul.direction li {
         display: block;
         margin: 50px 0;
         line-height: 30px;
     }
-    nav ul li a{
+    nav ul.direction li a{
         font-size:20px;
     }
     a:hover,a.active{
         background: none;
         color:#0082e6
     }
-    #check:checked ~ ul{
+    #check:checked ~ ul.direction{
         left : 0;
     }
 }
 
-section{
-    background: rgb(147, 103, 21) no-repeat;
-    background-size:cover;
-    height: calc(100vh-80px);
+div.container {
+    height: 22rem;
+    border-bottom:5px double black;
+    background:url(images/excavator-1174428_1280.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    
 }
+
+div.container h1.content{
+    position: relative;
+    top:150px;
+    left: 220px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 3rem;
+    color: rgb(0, 0, 0);
+    text-shadow:1px 1px 10px rgb(255, 255, 255);
+    letter-spacing: 0.3rem;
+    background-color: rgba(128, 128, 128, 0.432);
+    width: 1100px;
+
+    
+}
+
+div h3 a.aboutus{
+    position: relative;
+    top: 150px;
+    left: 220px;
+    border-radius: 5px;
+    color:#000000;
+    text-shadow:8px 8px 5px black;
+    letter-spacing: 0.3rem;
+}
+
+
+
+a.aboutus:hover{
+    background-color: #fa8a00;   
+}
+
+
+div ul.cards{
+    float:left;
+    font-size: 25px;
+    margin: 30px 0 10px 220px;
+
+}
+
+div ul.cards li{
+    display: inline-block;
+    margin-right: 50px;
+    border: 1px solid #ff891b;
+    background-color: #ff891b;
+    border-radius: 5px;
+    height: 250px;
+    width: 320px;
+    text-align: center;
+    /* background-image: ; */
+    padding-top: 70px;
+}
+/* 
+nav ul.direction{
+    float:right;
+    margin-right: 20px;
+}
+
+nav ul.direction li{
+    display:inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul.direction li a{
+    color:white;
+    font-size: 17px;
+    text-transform: uppercase;
+    padding: 7px 13px;
+    border-radius: 3px;
+}
+
+a.active,a:hover{
+    background: #ff891b;
+    transition: .5s;
+} */
