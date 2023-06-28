@@ -5,11 +5,14 @@
     list-style:none;
     box-sizing: border-box;
 }
-
+html{
+    scroll-behavior:smooth;
+}
 body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: 500;
-    /* max-width: 1450; */
+    background-color: rgb(240, 238, 232);
+    
 }
 nav{
     background: #000508bd ;
@@ -144,11 +147,11 @@ nav ul.flags li{
         left : 0;
     }
 }
-
+/* Card Sections Start */
 div.container {
     height: 22rem;
     border-bottom:5px double black;
-    background:url(images/excavator-1174428_1280.jpg);
+    background:url(images/pexels-andre-15028045.jpg);
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -188,46 +191,211 @@ a.aboutus:hover{
 }
 
 
-div ul.cards{
-    float:left;
-    font-size: 25px;
-    margin: 30px 0 10px 220px;
-
+.cards{
+    margin-top: 4rem;
+    width: 1500px;
+    height: 200px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-evenly;
+    
 }
 
-div ul.cards li{
-    display: inline-block;
-    margin-right: 50px;
-    border: 1px solid #ff891b;
-    background-color: #ff891b;
+.xcard{
+    width: 300px;
+    height: 150px;
+    font-size: 1rem;
+    padding: 0.5rem;
     border-radius: 5px;
-    height: 250px;
-    width: 320px;
     text-align: center;
-    /* background-image: ; */
-    padding-top: 70px;
-}
-/* 
-nav ul.direction{
-    float:right;
-    margin-right: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    cursor: pointer;
+    margin-top: 80px;
 }
 
-nav ul.direction li{
-    display:inline-block;
-    line-height: 80px;
-    margin: 0 5px;
+.xcard .fast {
+    background-color: #fa8a00;
+    border: 5px solid orange;
+    position: relative;
+    border-radius: 5px;
+    background-image: url(images/pexels-quintin-gellar-2199293.jpg);
+    background-size: 350px;
+    background-position:top;
+    background-repeat: no-repeat,repeat;
+    height: 200px;
+    width: 350px;
+    filter: grayscale(100%);
+    transition: 0.5s ease-in-out;
+
 }
 
-nav ul.direction li a{
-    color:white;
-    font-size: 17px;
-    text-transform: uppercase;
-    padding: 7px 13px;
-    border-radius: 3px;
+.fast .content1{
+    display: none;
+    transition: 0.5s ease-in-out;
 }
 
-a.active,a:hover{
-    background: #ff891b;
-    transition: .5s;
-} */
+
+.xcard .fast:hover {
+    background-color: #fa8a00;
+    border: 5px solid orange;
+    border-radius: 5px;
+    background-image: url(images/kisspng-pickup-truck-semi-trailer-truck-clip-art-trucks-5abde843763021.0643451315223952034841.png);
+    background-size: 200px;
+    background-position:bottom;
+    background-repeat: no-repeat,repeat;
+    height: 300px;
+    width: 500px;
+    filter: grayscale(0%);
+    transition: 0.5s ease-in-out;
+    z-index: 1;
+    margin-left: -80px;
+    color: white;
+    text-shadow: 0px 0px 20px black;    
+}
+.xcard .fast:hover .content1 {
+    display: block;
+    justify-content: flex-start;
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+    transition: 2s ease-in-out;
+  }
+
+.xcard .unmached {
+    background-color: #fa8a00;
+    top:0;
+    left:0;
+    border: 5px solid orange;
+    position: relative;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    background-image: url(images/pexels-kateryna-babaieva-3784335.jpg);
+    background-size: 350px;
+    background-position:top;
+    background-repeat: no-repeat,repeat;
+    height: 200px;
+    width: 350px;
+    filter: grayscale(100%);
+    transition: 0.5s ease-in-out;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+}
+.unmached .content2{
+    display: none;
+    transition: 0.5s ease-in-out;
+}
+
+.xcard .unmached:hover {
+    background-color: #fa8a00;
+    top:0;
+    left:0;
+    border: 5px solid orange;
+    border-radius: 5px;
+    background-image: url(images/kisspng-computer-icons-gear-technology-system-gears-5abe092157c360.4679075215224036173595.png);
+    background-size: 120px;
+    background-position:bottom;
+    background-repeat: no-repeat,repeat;
+    height: 300px;
+    width: 500px;
+    filter: grayscale(0%);
+    transition: 0.5s ease-in-out;
+    z-index: 1;
+    margin-left: -80px;
+
+}
+
+.xcard .unmached:hover .content2 {
+    display: block;
+    justify-content: flex-start;
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+    transition: 2s ease-in-out;
+  }
+
+  .enduring .content3{
+    display: none;
+    transition: 0.5s ease-in-out;
+}
+
+.xcard .enduring {
+    background-color: #fa8a00;
+    top:0;
+    left:0;
+    border: 5px solid orange;
+    position: relative;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    background-image: url(images/pexels-fauxels-3183197.jpg);
+    background-size: 350px;
+    background-position:top;
+    background-repeat: no-repeat,repeat;
+    height: 200px;
+    width: 350px;
+    filter: grayscale(100%);
+    transition: 0.5s ease-in-out;
+}
+.xcard .enduring:hover .content3 {
+    display: block;
+    justify-content: flex-start;
+    margin-top: 10px;
+    font-size: 20px;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+    transition: 2s ease-in-out;
+  }
+
+.xcard .enduring:hover {
+    background-color: #fa8a00;
+    top:0;
+    left:0;
+    border: 5px solid orange;
+    border-radius: 5px;
+    background-image: url(images/kisspng-computer-icons-customer-service-icon-design-it-ser-ub4we-engineering-services-5b04fd031e98b6.5225810215270535711253.png);
+    background-size: 120px;
+    background-position:bottom;
+    background-repeat: no-repeat,repeat;
+    height: 300px;
+    width: 500px;
+    filter: grayscale(0%);
+    transition: 0.5s ease-in-out;
+    z-index: 1;
+    margin-left: -80px;
+    color: white;
+    text-shadow: 0px 0px 20px black;
+}
+/* Card Sections End */
+/* Aboutus Sections End */
+
+#aboutus{
+    border: 1px solid black;
+    margin:400px 0 100px 0;
+    background-color: #475461;
+}
+
+#aboutus h1{
+    text-align: center;
+    padding: 2rem;
+    color: wheat;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+    transition: 0.1s ease-in;
+
+}
+#aboutus h1:hover{
+    text-decoration: underline;
+}
+#aboutus p {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    max-width: 1300px;
+    padding-bottom: 20px;
+    color: white;
+    font-family: 'Ysabeau Office', sans-serif;
+}
